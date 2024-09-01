@@ -1,12 +1,11 @@
-// services/employeeApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { addEmployee,deleteEmployee,updateEmployee } from '../feature/companySlice'; // Importez l'action addEmployee de votre companySlice
+import { addEmployee,deleteEmployee,updateEmployee } from '../feature/companySlice';
 
 const employeeApi = createApi({
   reducerPath: 'employeeApi',
   baseQuery: fetchBaseQuery(
     { 
-        baseUrl: 'http://127.0.0.1:3009/',
+        baseUrl: import.meta.env.VITE_API_URL,
         prepareHeaders: (headers, { getState }) => {
             const token = localStorage.getItem('token');
             if (token) {

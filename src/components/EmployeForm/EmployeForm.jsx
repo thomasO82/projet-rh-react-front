@@ -1,4 +1,3 @@
-// components/EmployeeForm/EmployeeForm.js
 import React, { useState } from 'react';
 import FormField from '../FormField/FormField';
 import InputFile from '../InputFile/InputFile';

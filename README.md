@@ -27,7 +27,6 @@ npm install --save-dev vitest @testing-library/react @testing-library/jest-dom j
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   test: {

@@ -8,19 +8,13 @@ const Home = () => {
   const [company, setCompany] = useState(null);
   const [error, setError] = useState("");
   const employees = useSelector((state) => state.company.employees);
-  console.log(employees);
   
-
   const handleEdit = (employee) => {
     console.log("Modifier", employee);
   };
 
   const handleDelete = (employeeId) => {
     console.log("Supprimer", employeeId);
-  };
-
-  const handleBlame = (employee) => {
-    console.log("Blamer", employee);
   };
 
   return (
@@ -31,11 +25,10 @@ const Home = () => {
         {employees && employees.length > 0 ? (
           employees.map((employee) => (
             <EmployeeCard
-              key={employee._id} // Utilisez _id si c'est l'identifiant unique de MongoDB
+              key={employee._id} 
               employee={employee}
               onEdit={handleEdit}
               onDelete={handleDelete}
-              onBlame={handleBlame} // Ajoutez cette prop
             />
           ))
         ) : (

@@ -1,11 +1,10 @@
-// store.js
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
-import companyReducer from '../feature/companySlice'; // Assurez-vous que ce chemin est correct
-import employeeApi from '../services/employeeApi'; // Assurez-vous que ce chemin est correct
+import storage from 'redux-persist/lib/storage'; 
+import companyReducer from '../feature/companySlice'; 
+import employeeApi from '../services/employeeApi'; 
 
-// Configuration de la persistance
+// persist dans le local storge
 const persistConfig = {
   key: 'root',
   storage,

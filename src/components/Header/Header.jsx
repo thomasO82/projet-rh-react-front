@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { clearCompany } from '../../feature/companySlice'; // Assurez-vous que le chemin est correct
+import { clearCompany } from '../../feature/companySlice';
 import './Header.css';
 
 const Header = () => {
@@ -10,13 +10,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Supprimer le token du localStorage
     localStorage.removeItem('token');
-    
-    // Effacer les données de l'entreprise du store Redux
     dispatch(clearCompany());
-    
-    // Rediriger vers la page d'accueil ou de connexion
     navigate('/login');
   };
 
