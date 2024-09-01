@@ -1,0 +1,111 @@
+.employee-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(33% - 30px);
+    transition: transform 0.3s ease;
+  }
+  
+  .employee-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .employee-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .employee-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .employee-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  
+  /* Styles pour ActionButton - ajustez selon vos besoins */
+  .button-container button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-container button[type="edit"] {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .button-container button[type="delete"] {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .button-container button[type="blame"] {
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  .button-container button:hover {
+    opacity: 0.8;
+  }
+  
+  .button-container button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Style pour le formulaire en mode édition */
+  .employee-card form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .employee-card form input,
+  .employee-card form select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .employee-card form button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .employee-card form button[type="submit"]:hover {
+    background-color: #27ae60;
+  }
+
+    
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .employee-card{
+      width: 100%;
+    }
+  }
+  
+  

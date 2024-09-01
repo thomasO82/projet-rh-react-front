@@ -5,18 +5,18 @@ import verifyToken from '../../utils/verifToken';
 const PrivateRoute = () => {
   const [authState, setAuthState] = useState({ isAuthenticated: null, isLoading: true });
 
-
-
   useEffect(() => {
-
-    if (verifyToken()) {
-      setAuthState({ isAuthenticated: true, isLoading: false });
-
-    }else{
-      setAuthState({ isAuthenticated: false, isLoading: false });
-
-    }
-  }, []);
+    const auth = async () => {
+      try {
+        const isAuthenticated = await verifyToken();
+        setAuthState({ isAuthenticated, isLoading: false });
+      } catch (error) {
+        console.error("Erreur lors de la vérification du token:", error);
+        setAuthState({ isAuthenticated: false, isLoading: false });
+      }
+    };
+    auth();
+  }, [verifyToken]);
 
   if (authState.isLoading) {
     return <div>Chargement, veuillez patienter</div>;
@@ -25,4 +25,4 @@ const PrivateRoute = () => {
   return authState.isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
-export default PrivateRoute;
+export default PrivateRoute

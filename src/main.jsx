@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { store } from './app/store'
-
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './app/store'
 import App from './App'
 import Home from './pages/Home/Home.jsx'
 import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes.jsx'
@@ -15,6 +15,7 @@ import Error from './pages/Error/Error.jsx'
 import Login from './pages/Login/Login.jsx'
 import Register from './pages/Register/Register.jsx'
 import './index.css'
+import AddEmployee from './pages/AddEmployee/AddEmployee.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
           {
             path: "/",
             element: <Home />,
+          },
+          {
+            path: "/addEmployee",
+            element: <AddEmployee />,
           },
         ],
       },
@@ -46,7 +51,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </StrictMode>,
 )

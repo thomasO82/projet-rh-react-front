@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FormField from '../../components/FormField/FormField';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
+import './Register.css'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -13,15 +14,7 @@ const Register = () => {
         name_director: '',
         password: ''
     });
-    const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            navigate('/', { replace: true });
-        }
-    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -33,7 +26,6 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (Object.keys(errors).length === 0) {
             setIsLoading(true);
             try {
                 const response = await fetch('http://127.0.0.1:3009/register', {
@@ -58,7 +50,7 @@ const Register = () => {
             } finally {
                 setIsLoading(false);
             }
-        }
+  
     };
 
     return (
@@ -112,7 +104,7 @@ const Register = () => {
                         value={company.name_director}
                         onChange={handleChange}
                         required
-                        patternError={/^[a-zA-Z\s]{2, 50}$/}
+                        patternError={/^[a-zA-Z\s]{2,50}$/}
                         errorMessage="Le nom du directeur doit contenir entre 2 et 50 caractères alphabétiques."
 
                     />

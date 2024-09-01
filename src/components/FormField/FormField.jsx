@@ -26,8 +26,10 @@ const FormField = ({ label, type, id, name, value, onChange, patternError, error
 
     return (
         <div className="form-group">
+            <div className='label-input'>
             {error && <p className="error-message">{error}</p>}
             <label htmlFor={id}>{label}</label>
+            </div>
             <input
                 type={type}
                 id={id}

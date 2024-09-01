@@ -1,0 +1,22 @@
+.file-input-group {
+    margin-bottom: 15px;
+}
+
+.file-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.file-input-group input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

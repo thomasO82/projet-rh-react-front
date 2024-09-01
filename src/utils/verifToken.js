@@ -1,8 +1,9 @@
  const verifyToken = async () => {
     const token = localStorage.getItem('token');
+    console.log('takjhkj');
+    
     if (!token) {
-      setAuthState({ isAuthenticated: false, isLoading: false });
-      return;
+      return false;
     }
     try {
       const response = await fetch('http://127.0.0.1:3009/verifytoken', {

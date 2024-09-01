@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { setCompany } from '../../feature/companySlice'
-
+import './Login.css'
 const LoginPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -13,12 +13,6 @@ const LoginPage = () => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            navigate('/', { replace: true });
-        }
-    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,7 +35,7 @@ const LoginPage = () => {
 
             if (data.token) {
                 localStorage.setItem('token', data.token);
-                dispatch(setCompany(({ name, employees, _id }) => ({ name, employees, _id }))(data.company))
+                dispatch(setCompany(data.company));
                 navigate('/', {
                     replace: true,
                     state: { user: data.user }

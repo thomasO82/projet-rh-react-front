@@ -1,0 +1,39 @@
+.login-button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Couleur verte, vous pouvez la changer selon votre thème */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #45a049; /* Une teinte plus foncée pour l'effet hover */
+  }
+  
+  .login-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  /* Animation pour l'état de chargement */
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .login-button:disabled {
+    animation: pulse 1.5s infinite;
+  }
