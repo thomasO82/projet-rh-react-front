@@ -68,7 +68,7 @@ describe('LoginPage', () => {
         //on attend l'appel a notre fonction mock fetch
         await waitFor(() => {
             //ici, notre test doit avoir appeller notre mock de fetch (avec la route de login) et attend qu'on objet soit recu
-            expect(global.fetch).toHaveBeenCalledWith('http://127.0.0.1:3009/login', expect.any(Object));
+            expect(global.fetch).toHaveBeenCalledWith('http://146.59.242.125:3010/login', expect.any(Object));
         });
 
         //ici on appelle getAction de notre mock de redux, qui permet de recuperer ce qui a ete fait sur le "faux" store

@@ -66,7 +66,7 @@ const EmployeeCard = ({ employee }) => {
     return (
         <div className="employee-card">
             <div>
-                <img src={`http://127.0.0.1:3009/uploads/${employee.img}`} alt="" />
+                <img src={`${import.meta.env.VITE_API_URL}/uploads/${employee.img}`} alt="" />
             </div>
             <h3>{employee.name} {employee.firstname}</h3>
             <p>Poste: {employee.role}</p>

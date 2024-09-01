@@ -6,7 +6,7 @@
       return false;
     }
     try {
-      const response = await fetch('http://127.0.0.1:3009/verifytoken', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}verifytoken`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
