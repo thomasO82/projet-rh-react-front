@@ -61,3 +61,7 @@ Pour executer vos tests utilisez la commande
 ```bash
 npm run test
 ```
+
+## documentation vitest 
+
+[vous trouverez ici la documentation de vitest](https://vitest.dev/guide/)
